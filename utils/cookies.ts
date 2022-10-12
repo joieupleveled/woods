@@ -1,0 +1,24 @@
+import Cookies from 'js-cookie';
+
+export function getParsedCookie(key: string): WoodCookieItem[] | undefined {
+  const cookieValue = Cookies.get(key); // type string | Undefined
+
+  if (!cookieValue) {
+    return undefined;
+  }
+
+  try {
+    return JSON.parse(cookieValue); // type should be a string
+  } catch (err) {
+    return undefined;
+  }
+}
+
+type WoodCookieItem = {
+  id: string | number;
+  quantity: number;
+};
+
+export function setStringifiedCookie(key: string, value: WoodCookieItem[]) {
+  Cookies.set(key, JSON.stringify(value));
+}
