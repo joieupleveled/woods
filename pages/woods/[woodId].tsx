@@ -25,15 +25,6 @@ const woodStyles = css`
   }
 `;
 
-// Type definitions
-type SingleWood = {
-  id: number;
-  name: string;
-  image: string;
-  description: string;
-  price: number;
-};
-
 // Annotate the type Props
 type Props =
   | {
@@ -117,7 +108,7 @@ export default function SingleWood(props: Props) {
             setStringifiedCookie('quantity', currentCookieValue);
           }}
         >
-          Decrease +
+          -
         </button>
         <button
           onClick={() => {
@@ -151,7 +142,7 @@ export default function SingleWood(props: Props) {
             setStringifiedCookie('quantity', currentCookieValue);
           }}
         >
-          Increase +
+          +
         </button>
       </div>
     </div>
@@ -162,9 +153,6 @@ export async function getServerSideProps(
   context: GetServerSidePropsContext,
 ): Promise<GetServerSidePropsResult<Props>> {
   // console.log(context.query);
-
-  // fyi: the const woodId  below simulates doing to 1 single user but everytime you go to 1, you go through the whole list, EVERYTIME! Is there a more efficient way? Yes! Another lecture
-  // Note: this is not the most efficient way of finding the single wood, because it will run every time. Using a databse like PostgreSQL will allow you to do this in a nicer way.
 
   // Retrieve the wood ID from the URL
   const woodId = parseIntFromContextQuery(context.query.woodId);
@@ -177,11 +165,6 @@ export async function getServerSideProps(
       },
     };
   }
-
-  // Finding the wood
-  // const foundWood = woods.find((wood) => {
-  //   return wood.id === woodId;
-  // });
 
   const foundWood = await getWoodById(woodId);
 

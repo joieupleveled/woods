@@ -1,9 +1,10 @@
 /* eslint-disable react/no-unknown-property */
 import { css } from '@emotion/react';
-import { GetServerSidePropsResult } from 'next';
+import { GetServerSideProps, GetServerSidePropsResult } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
+import Header from '../../components/Header';
 import { getWoods, Wood } from '../../database/woods';
 
 // import { woods } from '../../database/woods';

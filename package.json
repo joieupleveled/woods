@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@emotion/react": "^11.10.4",
+    "@types/node": "^18.8.5",
     "dotenv-cli": "^6.0.0",
     "dotenv-safe": "^8.2.0",
     "js-cookie": "^3.0.1",

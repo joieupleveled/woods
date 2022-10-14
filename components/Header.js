@@ -20,22 +20,19 @@ const icon = css`
   height: 40px;
 `;
 
-type Props = {
-  numberOfItems: string;
-};
-
-export default function Header(props: Props) {
+export default function Header(props) {
   return (
     <header>
       <nav css={navStyles}>
         <Link href="/">Home</Link>
         <Link href="/woods">Woods</Link>
-        <Link href="/about">About</Link>
-        <Link href="/cart">Shopping Cart</Link>
+        <Link href="/shopping-cart">Shopping Cart</Link>
+
+        {/* // reduce method */}
 
         <Link href="/shopping-bag">
           <a>
-            <img css={icon} src="/bag-icon.jpeg" alt="shopping bag" />
+            <img css={icon} src="/bag-icon.jpeg" alt="shopping bag" />0
           </a>
         </Link>
 

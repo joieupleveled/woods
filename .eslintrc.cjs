@@ -7,7 +7,7 @@ module.exports = {
       {
         connections: [
           {
-            databaseUrl: `postgres://${process.env.PGUSERNAME}:${process.env.PGPASSWORD}@${process.env.PGHOST}:5432/${process.env.PGDATABASE}`,
+            databaseUrl: 'postgres://postgres:postgres@localhost:5432/postgres',
             tagName: 'sql',
             fieldTransform: 'camel',
             transform: '${type}[]',

@@ -3,6 +3,9 @@ import { css, Global } from '@emotion/react';
 import Layout from '../components/Layout';
 
 function MyApp({ Component, pageProps }) {
+  // useEffect
+  //const [cookies, setCookies]  = useState ();
+
   return (
     <>
       <Global

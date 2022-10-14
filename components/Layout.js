@@ -1,6 +1,8 @@
 /* eslint-disable react/no-unknown-property */
 import { css } from '@emotion/react';
 import Head from 'next/head';
+import { Dispatch, SetStateAction } from 'react';
+import { ShoppingCartItem } from '../utils/types';
 import Footer from './Footer';
 import Header from './Header';
 
@@ -17,7 +19,6 @@ export default function Layout(props) {
       </Head>
       <Header />
       <main css={mainStyles}>{props.children}</main>
-
       <Footer />
     </>
   );
